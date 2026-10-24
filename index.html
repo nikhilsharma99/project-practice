@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a1110">
+  <title>Last Light — A survival story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Last Light home"><span class="brand-mark">L<span>╱</span></span> LAST LIGHT <span class="edition">SURVIVAL / 01</span></a>
+    <div class="top-status"><span class="status-dot"></span> OFFLINE DISTRICT <span class="divider"></span> SINGLE PLAYER</div>
+    <button id="sound" class="icon-button" aria-label="Enable sound">SOUND OFF <span>◖</span></button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow"><span></span> THE QUARANTINE CHRONICLES</p><h1>The city is gone.<br><em>You’re still here.</em></h1></div>
+      <div class="intro-aside"><p>A little hope. A blunt weapon.<br>And a very long night ahead.</p><span>SCAVENGE. MOVE. SURVIVE.</span></div>
+    </section>
+
+    <section class="game-shell" aria-label="Last Light survival game">
+      <div class="game-topline"><span><i class="live-dot"></i> SECTOR 04 <b>/</b> OLD TOWN</span><span id="phase-label">DUSK APPROACHING <b>↗</b></span></div>
+      <div class="viewport" id="viewport">
+        <canvas id="game" tabindex="0" aria-label="Top-down zombie survival game. Use WASD to move, Shift to sprint, Space to vault, click or F to attack, E to collect, Q to heal, and Escape to pause."></canvas>
+        <div class="vignette"></div>
+        <div class="hud-top" id="hud">
+          <div class="vitals"><div class="health-label"><span>✚ &nbsp; HEALTH</span><strong id="health-number">100</strong></div><div class="meter health"><span id="health-bar"></span></div><div class="stamina-label"><span>STAMINA</span><span id="stamina-number">100%</span></div><div class="meter stamina"><span id="stamina-bar"></span></div></div>
+          <div class="clock"><span id="time-icon">◒</span><div><strong id="clock-time">18:40</strong><small id="clock-caption">NIGHT IN 00:45</small></div></div>
+        </div>
+        <div class="district-label"><span>HARRISON DISTRICT</span><small>35° 42′ N &nbsp; 51° 25′ E</small></div>
+        <div class="objective" id="objective"><span class="objective-kicker">CURRENT OBJECTIVE</span><div><span class="objective-icon">◇</span><strong id="objective-title">Find emergency supplies</strong></div><p id="objective-description">Search the marked supply caches.</p><div class="objective-progress"><span id="supply-count">0 / 3</span><span>SUPPLY CACHES</span></div></div>
+        <div class="hud-bottom"><div class="weapon"><span class="weapon-icon">╱</span><div><strong>STEEL PIPE</strong><small>MELEE · CLOSE RANGE</small></div><span class="weapon-key">F</span></div><div class="pocket"><span>✚</span><strong id="medkit-count">1</strong><kbd>Q</kbd></div><div class="kills"><span id="kill-count">00</span> INFECTED DOWN</div></div>
+        <div id="interaction" class="interaction hidden"><kbd>E</kbd> <span>SEARCH SUPPLY CACHE</span></div>
+        <div id="toast" class="toast hidden" role="status"></div>
+        <div class="crosshair" id="crosshair"></div>
+
+        <div class="overlay" id="start-screen">
+          <div class="start-content"><div class="chapter-tag"><span></span> A SHORT SURVIVAL EXPERIENCE</div><p class="start-overline">WHEN THE SUN GOES DOWN</p><h2>DON’T<br><span>STAND STILL.</span></h2><p class="start-description">Scavenge three supply caches. Reach the safehouse.<br>Stay ahead of the infected when night falls.</p><button id="start-button" class="primary-button">ENTER THE DISTRICT <span>↗</span></button><div class="start-meta"><span>◷ &nbsp; 3–5 MINUTES</span><span>⌨ &nbsp; KEYBOARD + MOUSE</span></div></div>
+          <div class="start-coordinate">04 <span>LAST KNOWN SAFE SECTOR</span></div>
+        </div>
+        <div class="overlay hidden" id="pause-screen"><div class="result-content"><p class="eyebrow">TAKE A BREATH</p><h2>ON HOLD.</h2><p>The district can wait a moment.</p><button id="resume-button" class="primary-button">BACK TO THE STREETS <span>↗</span></button></div></div>
+        <div class="overlay hidden" id="end-screen"><div class="result-content"><p class="eyebrow" id="result-kicker">EXTRACTION COMPLETE</p><h2 id="result-title">ONE MORE<br><span>SUNRISE.</span></h2><p id="result-description">You made it to the safehouse.</p><div class="result-stats" id="result-stats"></div><button id="restart-button" class="primary-button">BACK INTO THE DISTRICT <span>↗</span></button></div></div>
+        <div class="mobile-warning">Best played with a keyboard and mouse on a desktop.</div>
+      </div>
+      <div class="controls"><div><kbd>W</kbd><span class="wasd"><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>MOVE</span></div><div><kbd>SHIFT</kbd><span>SPRINT</span></div><div><kbd>SPACE</kbd><span>VAULT</span></div><div><kbd>F / CLICK</kbd><span>ATTACK</span></div><div><kbd>E</kbd><span>SEARCH</span></div><div><kbd>Q</kbd><span>HEAL</span></div><div><kbd>ESC</kbd><span>PAUSE</span></div></div>
+    </section>
+
+    <section class="field-notes"><div class="notes-title"><span>FIELD NOTES</span><h3>A few rules to live by.</h3></div><article><span class="note-number">01</span><div><h4>Keep moving.</h4><p>Sprint to make distance. Vault the low barriers.<br>Your stamina is a lifeline, not a luxury.</p></div></article><article><span class="note-number">02</span><div><h4>Fear the dark.</h4><p>At night, the infected get faster.<br>Find your supplies before they find you.</p></div></article></section>
+  </main>
+  <footer><span>LAST LIGHT <b>© 2026</b></span><p>An original mini survival game. Inspired by a love of the genre.</p><span class="footer-end"><i></i> STILL ALIVE.</span></footer>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
